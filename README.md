@@ -1,4 +1,4 @@
-# CaesarCipher
+# CCUtil: Caesar Cipher Utility
 A command line utility for enciphering, deciphering, and cracking Caesar Ciphers.
 
 ## UML Diagram
