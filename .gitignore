@@ -44,3 +44,6 @@ Release/
 
 # IPCH Folder
 ipch/
+
+# Doxygen Docs Folder
+Docs/
