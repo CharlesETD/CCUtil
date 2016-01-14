@@ -33,32 +33,37 @@ CCUtil accepts only command line arguments. The following is every possible argu
 
 ### Help
 Prints a brief overview of available command line arguments.
-Argument|Example
----|---
--h|CCUtil -h
+
+| Argument | Syntax    | Example   |
+|----------|-----------|-----------|
+| `-h`       | `CCUtil -h` | `CCUtil -h` |
 
 ### Encipher
 Enciphers the given plaintext with the given key. Note that the key must be a positive integer and the plaintext to encipher must be in quotes if it contains spaces.
+
 | Argument | Syntax                                    | Example                                    |
-| -------- | ----------------------------------------- | ------------------------------------------ |
-| -e       | CCUtil -e "<plaintext to encipher>" <key> | CCUtil -e "Command line utils are fun!" 15 |
+|----------|-------------------------------------------|--------------------------------------------|
+| `-e`       | `CCUtil -e "<plaintext to encipher>" <key>` | `CCUtil -e "Command line utils are fun!" 15` |
 
 ### Decipher
 Deciphers the given ciphertext with the given key. Note that the key must be a positive integer and the ciphertext to decipher must be in quotes if it contains spaces.
+
 | Argument | Syntax                                     | Example                                    |
-| -------- | ------------------------------------------ | ------------------------------------------ |
-| -d       | CCUtil -d "<ciphertext to decipher>" <key> | CCUtil -d "RDBBPCS AXCT JIXAH PGT UJC!" 15 |
+|----------|--------------------------------------------|--------------------------------------------|
+| `-d`       | `CCUtil -d "<ciphertext to decipher>" <key>` | `CCUtil -d "RDBBPCS AXCT JIXAH PGT UJC!" 15` |
 
 ### Crack Key
 Uses statistical analysis to guess the correct key and decipher the given ciphertext. Note that the ciphertext to analyze must be in quotes if it contains spaces and that the resulting plaintext is only a guess and may not be correct.
+
 | Argument | Syntax                            | Example                                 |
-| -------- | --------------------------------- | --------------------------------------- |
-| -c       | CCUtil -c "<ciphertext to crack>" | CCUtil -c "RDBBPCS AXCT JIXAH PGT UJC!" |
+|----------|-----------------------------------|-----------------------------------------|
+| `-c`       | `CCUtil -c "<ciphertext to crack>"` | `CCUtil -c "RDBBPCS AXCT JIXAH PGT UJC!"` |
 
 ### Brute Force Examination
 Prints the results of trying to decipher the given ciphertext with every possible key. Note that the ciphertext to brute force must be in quotes if it contains spaces.
+
 | Argument | Syntax                            | Example                                 |
-| -------- | --------------------------------- | --------------------------------------- |
-| -b       | CCUtil -b "<ciphertext to force>" | CCUtil -b "RDBBPCS AXCT JIXAH PGT UJC!" |
+|----------|-----------------------------------|-----------------------------------------|
+| `-b`       | `CCUtil -b "<ciphertext to force>"` | `CCUtil -b "RDBBPCS AXCT JIXAH PGT UJC!"` |
 
 © Copyright 2016 Charles Duncan (CharlesETD@gmail.com)
