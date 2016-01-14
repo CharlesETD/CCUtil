@@ -33,9 +33,9 @@ CCUtil accepts only command line arguments. The following is every possible argu
 
 ### Help
 Prints a brief overview of available command line arguments.
-| Argument | Example   |
-| -------- | --------- |
-| -h       | CCUtil -h |
+Argument|Example
+---|---
+-h|CCUtil -h
 
 ### Encipher
 Enciphers the given plaintext with the given key. Note that the key must be a positive integer and the plaintext to encipher must be in quotes if it contains spaces.
