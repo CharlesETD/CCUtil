@@ -1,5 +1,5 @@
 # CCUtil: Caesar Cipher Utility
-A command line utility for enciphering, deciphering, and cracking Caesar Ciphers.
+A command line utility for enciphering, deciphering, and cracking Caesar Ciphers. Created for an assignment in CS4243/CS5243 "Algorithms and Processes in Computer Security" at Oklahoma State university for Dr. Eric Chan-Tin.
 
 ## Doxygen
 This project has been commented with Doxygen compatible comments. The resulting HTML files from Doxygen have been ommited from GitHub as they are not strictly part of the source code and are rather bulky; however, running Doxygen (optimized for C++) on this project's source code will procude a complete documentation in HTML. For more on Doxygen please visit their <a href="http://www.stack.nl/~dimitri/doxygen/" target="_blank">website</a>.
