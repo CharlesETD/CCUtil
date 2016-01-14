@@ -11,15 +11,15 @@
  * ASCII reference table from:		http://www.asciitable.com/
  * Various function lookups from:	http://www.cplusplus.com/reference/cctype/toupper/
  *									http://www.cplusplus.com/reference/string/string/reserve/
+ *									http://www.cplusplus.com/reference/exception/exception/
  *
  * © Copyright 2016 Charles Duncan (CharlesETD@gmail.com)
  */
 
-#include <iostream>
-
-#include <climits>
 #include <cmath>
-#include <exception>
+#include <cstring>
+#include <limits>
+#include <stdexcept>
 #include <string>
 #include "CaesarCipher.h"
 
@@ -58,6 +58,13 @@ const double CaesarCipher::ALPHABET_FREQUENCIES[CaesarCipher::ALPHABET_LENGTH] =
 };
 
 // Method Definitions ********************************************************
+unsigned int CaesarCipher::getAlphabetLength (void) {
+
+	return ALPHABET_LENGTH;
+
+}
+
+//****************************************************************************
 std::string CaesarCipher::encipher (const std::string& plaintext, const unsigned int key) {
 
 	std::string ciphertext;
@@ -135,7 +142,8 @@ unsigned int CaesarCipher::crackKey (const std::string& ciphertext) {
 
 			if (ALPHABET_FREQUENCIES[i] == 0.0) {
 
-				throw std::exception ("Divide by Zero. A letter in the alphabet must have non-zero frequency.");
+				throw std::logic_error ("Divide by Zero. CaesarCipher::ALPHABET_FREQUENCIES contains at least one frequency of \'0.0\'.");
+				return 0;
 
 			}
 
@@ -176,8 +184,7 @@ double CaesarCipher::computeChiSquared (const double observedValue, const double
 
 	}
 	
-	// Let the supporting hardware/OS throw a divide by zero exception.
-	throw std::exception ("Divide by zero. \"expectedValue\" must not be zero.");
+	throw std::invalid_argument ("Divide by zero. \"expectedValue\" must not be zero.");
 	return 0.0;
 
 }
@@ -190,7 +197,7 @@ unsigned int CaesarCipher::countLetters (const std::string& ciphertext, unsigned
 	char uppercaseCharacter = '\0';
 
 	// Clear the array of letter counts.
-	std::memset (letterCounts, 0, sizeof (unsigned int) * ALPHABET_LENGTH);
+	memset (letterCounts, 0, sizeof (unsigned int) * ALPHABET_LENGTH);
 
 	for (const char character : ciphertext) {
 

@@ -11,6 +11,7 @@
  * ASCII reference table from:		http://www.asciitable.com/
  * Various function lookups from:	http://www.cplusplus.com/reference/cctype/toupper/
  *									http://www.cplusplus.com/reference/string/string/reserve/
+ *									http://www.cplusplus.com/reference/exception/exception/
  *
  * © Copyright 2016 Charles Duncan (CharlesETD@gmail.com)
  */
@@ -31,6 +32,13 @@ private:
 	static const double			ALPHABET_FREQUENCIES[ALPHABET_LENGTH];	/**< Frequencies each letter occurs in the alphabet. */
 
 public:
+	// Public Accessors ******************************************************
+	/**
+	 * Returns the number of letters in this alphabet.
+	 * @return the number of letters in this alphabet.
+	 */
+	static unsigned int getAlphabetLength (void);
+
 	// Public Methods ********************************************************
 	/**
 	 * Enciphers the given plaintext using the given key and converts it to
@@ -56,7 +64,7 @@ public:
 	 * @param ciphertext to analyze.
 	 * @return the most-likely key used to encipher the given ciphertext. Note
 	 * this is not necessarily the right key.
-	 * @throw generic exception if for some reason a letter in the alphabet has
+	 * @throw logic_error if for some reason a letter in the alphabet has
 	 * a frequency of zero.
 	 */
 	static unsigned int crackKey (const std::string& ciphertext);
@@ -68,7 +76,7 @@ private:
 	 * @param observedValue.
 	 * @param expectedValue, should never be 0.
 	 * @return NaN if expectedValue was zero (and NaN is supported), otherwise chi squared.
-	 * @throw generic exception if NaN was unsupported and expectedValue was zero.
+	 * @throw invalid_argument if NaN was unsupported and expectedValue was zero.
 	 */
 	static double computeChiSquared (const double observedValue, const double expectedValue);
 
