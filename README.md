@@ -1,6 +1,9 @@
 # CCUtil: Caesar Cipher Utility
 A command line utility for enciphering, deciphering, and cracking Caesar Ciphers.
 
+## Doxygen
+This project has been commented with Doxygen compatible comments. The resulting HTML files from Doxygen have been ommited from GitHub as they are not strictly part of the source code and are rather bulky; however, running Doxygen (optimized for C++) on this project's source code will procude a complete documentation in HTML. For more on Doxygen please visit their <a href="http://www.stack.nl/~dimitri/doxygen/" target="_blank">website</a>.
+
 ## UML Diagram
 The <a href="https://creately.com/diagram/ijdk9blp1/PtoZQMSObbDN1fG1mCMRB4c7mfQ%3D" target="_blank">UML diagram</a> for this project is hosted at Creately. Note that the diagram is not generated from code and thus changes to the code will not be reflected in the UML or vice versa.
 
