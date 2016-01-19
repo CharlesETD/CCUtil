@@ -1,8 +1,8 @@
 # CCUtil: Caesar Cipher Utility
-A command line utility for enciphering, deciphering, and cracking Caesar Ciphers.
+A command line utility for enciphering, deciphering, and cracking Caesar Ciphers. Created for an assignment in CS4243/CS5243 "Algorithms and Processes in Computer Security" at Oklahoma State university for Dr. Eric Chan-Tin.
 
 ## Doxygen
-This project has been commented with Doxygen compatible comments. The resulting HTML files from Doxygen have been ommited from GitHub as they are not strictly part of the source code and are rather bulky; however, running Doxygen (optimized for C++) on this project's source code will procude a complete documentation in HTML. For more on Doxygen please visit their <a href="http://www.stack.nl/~dimitri/doxygen/" target="_blank">website</a>.
+This project has been commented with Doxygen compatible comments. The resulting HTML files from Doxygen have been omitted from GitHub as they are not strictly part of the source code and are rather bulky; however, running Doxygen (optimized for C++) on this project's source code will produce a complete documentation in HTML. For more on Doxygen please visit their <a href="http://www.stack.nl/~dimitri/doxygen/" target="_blank">website</a>.
 
 ## UML Diagram
 The <a href="https://creately.com/diagram/ijdk9blp1/PtoZQMSObbDN1fG1mCMRB4c7mfQ%3D" target="_blank">UML diagram</a> for this project is hosted at Creately. Note that the diagram is not generated from code and thus changes to the code will not be reflected in the UML or vice versa.
@@ -24,12 +24,12 @@ This project has been tested to compile on Windows 7 with Visual Studio 2012 and
 
 ### Linux | G++ 4.9.2
 1. Clone the "CCUtil" directory to your machine.
-2. Make two more directories titled "Release" and "Debug" in the same directory you cloned the "CCUtil" direcotry into.
+2. Make two more directories titled "Release" and "Debug" in the same directory you cloned the "CCUtil" directory into.
 3. At this point you should have 3 folders "Release", "Debug", and "CCUtil" all inside of your current directory.
 4. To compile Debug mode type: g++ -std=c++11 -Og CCUtil/*.cpp -o Debug/CCUtil
 5. To compile Release mode type: g++ -std=c++11 -O3 CCUtil/*.cpp -o Release/CCUtil
 
-As a final note, building Debug mode in Visual Studio will cause automated tests to be built in as well. These automated tests run only durring startup of the program in Debug mode. To include these tests in other compilers you must manually define "_DEBUG" for for your Debug builds. These tests are not inclusive and are meant only for basic testing.
+As a final note, building Debug mode in Visual Studio will cause automated tests to be built in as well. These automated tests run only during startup of the program in Debug mode. To include these tests in other compilers you must manually define "_DEBUG" for your Debug builds. These tests are not inclusive and are meant only for basic testing.
 
 ## Usage
 CCUtil accepts only command line arguments. The following is every possible argument with proper syntax and examples:
