@@ -41,8 +41,7 @@ public:
 
 	// Public Methods ********************************************************
 	/**
-	 * Enciphers the given plaintext using the given key and converts it to
-	 * uppercase.
+	 * Enciphers the given plaintext using the given key.
 	 * @param plaintext to encipher.
 	 * @param key to encipher plaintext with.
 	 * @return the ciphertext.
@@ -50,8 +49,7 @@ public:
 	static std::string encipher (const std::string& plaintext, const unsigned int key);
 
 	/**
-	 * Deciphers the given ciphertext using the given key and converts it to
-	 * uppercase.
+	 * Deciphers the given ciphertext using the given key.
 	 * @param ciphertext to decipher.
 	 * @param key to decipher with. Note this is the same as the key used to encipher.
 	 * @return the plaintext.

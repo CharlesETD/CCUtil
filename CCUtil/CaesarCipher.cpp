@@ -67,9 +67,13 @@ unsigned int CaesarCipher::getAlphabetLength (void) {
 //****************************************************************************
 std::string CaesarCipher::encipher (const std::string& plaintext, const unsigned int key) {
 
+	// This is the first character of lowercase ASCII.
+	const unsigned int ASCII_LOWERCASE = 97;
+
 	std::string ciphertext;
 	unsigned int adjustedKey = 0;
 	char uppercaseCharacter = '\0';
+	char encipheredCharacter = '\0';
 
 	// Adjust key to put it in range [0,ALPHABET_LENGTH].
 	adjustedKey = key % ALPHABET_LENGTH;
@@ -87,7 +91,16 @@ std::string CaesarCipher::encipher (const std::string& plaintext, const unsigned
 			// and wraps the character back to A if it exceeds Z. Finally, the range
 			// is adjusted once more so that the character lines up with ASCII and is
 			// appended to the string.
-			ciphertext += (((uppercaseCharacter - 65) + adjustedKey) % ALPHABET_LENGTH) + 65;
+			encipheredCharacter = (((uppercaseCharacter - 65) + adjustedKey) % ALPHABET_LENGTH) + 65;
+
+			// Preserve case of original string by converting it back to lowercase if need be.
+			if (character >= ASCII_LOWERCASE) {
+
+				encipheredCharacter = tolower (encipheredCharacter);
+
+			}
+
+			ciphertext += encipheredCharacter;
 
 		} else {
 
