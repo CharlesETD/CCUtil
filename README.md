@@ -35,38 +35,59 @@ As a final note, building Debug mode in Visual Studio will cause automated tests
 CCUtil accepts only command line arguments. The following is every possible argument with proper syntax and examples:
 
 ### Help
-Prints a brief overview of available command line arguments.
+Prints a brief overview of available command line arguments. Does not support input files, specified text, or output files.
 
 | Argument | Syntax    | Example   |
 |----------|-----------|-----------|
-| `-h`       | `CCUtil -h` | `CCUtil -h` |
+| `-h`     | `CCUtil -h` | `CCUtil -h` |
 
-### Encipher
-Enciphers the given plaintext with the given key. Note that the key must be a positive integer and the plaintext to encipher must be in quotes if it contains spaces.
+### Specify Text
+Specifies the text to be enciphered, deciphered, etc. This command must be paired with a command such as (-e). Cannot be paired with loaded text from input file. Note that the text must be in quotes if it contains spaces.
 
 | Argument | Syntax                                    | Example                                    |
 |----------|-------------------------------------------|--------------------------------------------|
-| `-e`       | `CCUtil -e "<plaintext to encipher>" <key>` | `CCUtil -e "Command line utils are fun!" 15` |
+| `-t`       | `-t "<text>"` | `CCUtil -e 15 -t "Command line utils are fun!"` |
+
+### Load Text from Input File
+Loads the text to be enciphered, deciphered, etc. from the given file. This command must be paired with a command such as (-e). Cannot be paired with specified text. Note that the filename must be in quotes if it contains spaces.
+
+| Argument | Syntax                                    | Example                                    |
+|----------|-------------------------------------------|--------------------------------------------|
+| `-i`       | `-i "<filepath and name>"` | `CCUtil -e 22 -i "C:\Users\user\Desktop\text.txt"` |
+
+### Save Output to File
+Saves the results of the given operation to the given file. This command must be paired with a command such as (-e). Note that the filename must be in quotes if it contains spaces.
+
+| Argument | Syntax                                    | Example                                    |
+|----------|-------------------------------------------|--------------------------------------------|
+| `-o`       | `-o "<filepath and name>"` | `CCUtil -d 12 -t "Hello World!" -o "C:\Users\user\Desktop\test.txt"` |
+
+### Encipher
+Enciphers the provided text or file with the given key. Requires text or input file to be specified. Output file is optional. Note that the key must be a positive integer.
+
+| Argument | Syntax                                    | Example                                    |
+|----------|-------------------------------------------|--------------------------------------------|
+| `-e`       | `CCUtil -e <key>` | `CCUtil -e 15 -t "Command line utils are fun!"` |
 
 ### Decipher
-Deciphers the given ciphertext with the given key. Note that the key must be a positive integer and the ciphertext to decipher must be in quotes if it contains spaces.
+Deciphers the provided text or file with the given key. Requires text or input file to be specified. Output file is optional. Note that the key must be a positive integer.
 
 | Argument | Syntax                                     | Example                                    |
 |----------|--------------------------------------------|--------------------------------------------|
-| `-d`       | `CCUtil -d "<ciphertext to decipher>" <key>` | `CCUtil -d "RDBBPCS AXCT JIXAH PGT UJC!" 15` |
+| `-d`       | `CCUtil -d <key>` | `CCUtil -d 15 -t "RDBBPCS AXCT JIXAH PGT UJC!"` |
 
 ### Crack Key
-Uses statistical analysis to guess the correct key and decipher the given ciphertext. Note that the ciphertext to analyze must be in quotes if it contains spaces and that the resulting plaintext is only a guess and may not be correct.
+Uses statistical analysis to guess the correct key and decipher the given text or file. Requires text or input file to be specified. Output file is optional. Note that the resulting plaintext is only a guess and may not be correct.
 
 | Argument | Syntax                            | Example                                 |
 |----------|-----------------------------------|-----------------------------------------|
-| `-c`       | `CCUtil -c "<ciphertext to crack>"` | `CCUtil -c "RDBBPCS AXCT JIXAH PGT UJC!"` |
+| `-c`       | `CCUtil -c` | `CCUtil -c -t "RDBBPCS AXCT JIXAH PGT UJC!"` |
 
 ### Brute Force Examination
-Prints the results of trying to decipher the given ciphertext with every possible key. Note that the ciphertext to brute force must be in quotes if it contains spaces.
+Prints the results of trying to decipher the provided text or file with every possible key. Requires text or input file to be specified. Output file is optional.
 
 | Argument | Syntax                            | Example                                 |
 |----------|-----------------------------------|-----------------------------------------|
-| `-b`       | `CCUtil -b "<ciphertext to force>"` | `CCUtil -b "RDBBPCS AXCT JIXAH PGT UJC!"` |
+| `-b`       | `CCUtil -b` | `CCUtil -b -t "RDBBPCS AXCT JIXAH PGT UJC!"` |
 
 © Copyright 2016 Charles Duncan (CharlesETD@gmail.com)
